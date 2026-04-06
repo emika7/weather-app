@@ -1,0 +1,17 @@
+{
+  "name": "weather-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "http-server dist -p 8080"
+},
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+
+    <!-- Font Awesome ikonoms -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- TypeScript -->
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Antraštė -->
+        <h1 class="title has-text-centered">🌤️ Weather App</h1>
+
+        <!-- Viršutinė juosta -->
+        <div class="columns is-vcentered mb-4">
+          <div class="column is-narrow">
+            <button class="button is-primary" id="openModalBtn">
+              <span class="icon"><i class="fas fa-plus"></i></span>
+              <span>Add Forecast</span>
+            </button>
+          </div>
+          <div class="column">
+            <input
+              class="input"
+              type="text"
+              id="searchBar"
+              placeholder="Search added forecasts..."
+            />
+          </div>
+        </div>
+
+        <!-- Pranešimų zona -->
+        <div id="notifications"></div>
+
+        <!-- Orų prognozių sąrašas -->
+        <div id="forecastList"></div>
+
+        <!-- Puslapiavimas -->
+        <nav class="pagination is-centered mt-4" id="pagination"></nav>
+
+      </div>
+    </section>
+
+    <!-- Modalinis langas -->
+    <div class="modal" id="addModal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Add Weather Forecast</p>
+          <button class="delete" id="closeModalBtn"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">City name, ZIP code or coordinates</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                id="modalSearchInput"
+                placeholder="e.g. Vilnius, 90210, 54.68,25.27"
+              />
+            </div>
+            <p class="help">Enter city name, ZIP code, or lat,lon coordinates</p>
+          </div>
+          <div id="modalNotification"></div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-primary" id="addForecastBtn">
+            <span class="icon"><i class="fas fa-plus"></i></span>
+            <span>Add</span>
+          </button>
+          <button class="button" id="cancelModalBtn">Cancel</button>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>
